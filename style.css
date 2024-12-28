@@ -1,0 +1,304 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ysa';
+    background-color: #f0f0f0;
+    overflow: auto;
+}
+
+.user-panel {
+    display: flex;
+    align-items: center;
+}
+
+.user-panel span {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+#logout-button {
+    background-color: #e64a19;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#logout-button:hover {
+    background-color: #b63b14;
+}
+
+.error{
+    color: red;
+    font-size: 20px;
+}
+
+button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #b4b4b4;
+}
+
+/* Заголовок */
+header{
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+}
+
+header h1{
+    text-align: center;
+    margin: 0;
+    font-size: 40px;
+    color: #4ca1af;
+}
+
+nav{
+    background-color: rgba(0,0,0,0.83);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #4ca1af;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 20px;
+    background-image: linear-gradient(white 50%, #4ca1af 50%);
+    background-size: 100% 200%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: all 500ms ease-in-out;
+}
+
+.nav-link:hover{
+    background-position: 0% 100%;
+    color: #4ca1af;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+li{
+    margin: 0 1.5rem;
+}
+
+/* Блок */
+
+.container, .registration, .test{
+    width: 30%;
+    padding: 30px;
+    margin: 20px auto;
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    display: none;
+}
+
+.container p{
+    font-size: 20px;
+}
+
+.container, .registration h1{
+    text-align: center;
+}
+
+.container p{
+    text-align: left;
+}
+
+.active{
+    display: block;
+}
+
+/* Главная */
+
+/* Словарь */
+
+#searchInput, #q5, #q6{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.term-list {
+    margin-top: 20px;
+}
+
+.term-item {
+    cursor: pointer;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+.description {
+    display: none; /* Скрываем описание по умолчанию */
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.description {
+    display: block; /* Показываем описание, когда элемент активен */
+}
+
+.search-box {
+    margin: 20px 0;
+}
+
+/* Галерея */
+
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slide-number {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+/* Тест */
+
+.question {
+    margin-bottom: 20px;
+}
+.correct {
+    color: green;
+}
+.incorrect {
+    color: red;
+}
+#result {
+    display: none; /* Скрываем результаты изначально */
+}
+
+/* Личный кабинет */
+
+#exit, #proverka{
+    margin-top: 20px;
+    padding: 10px 45%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Страница регистрации */
+
+.form-group{
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, select{
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.registration button{
+    margin-top: 20px;
+    padding: 10px 45%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Подвал */
+
+.footer_wrap{
+    padding: 0;
+}
+
+.footer{
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+    color: white;
+    border-top: 3px solid #4ca1af;
+}
+
+.footer a{
+    color: #4ca1af;
+    text-decoration: none;
+}
+
+.footer h4{
+    text-align: center;
+}
+
+/* Шрифт */
+@font-face {
+    font-family: "Ysa";
+    src: url("fonts/YsabeauOffice-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@media(max-width:576px){
+    ul{
+        flex-direction: column;
+    }
+    li{
+        margin: 1.5rem 0;
+    }
+}

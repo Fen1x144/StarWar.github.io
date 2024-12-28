@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang='ru'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" href="fonts/Forzan-Light.ttf" rel="stylesheet">
+        <title>Вселенная звездных войн</title>
+    </head>
+    <body>
+
+        <!-- Заголовок -->
+        <header>
+            <h1>Вселенная звездных войн</h1>
+        </header>
+        
+
+        <nav id="sections">
+            <ul>
+                <li><a class="nav-link" onclick="showContainer('main')">Главная</a></li>
+                <li><a class="nav-link" onclick="showContainer('dictionary')">Словарь</a></li>
+                <li><a class="nav-link" onclick="showContainer('gallery')">Галерея</a></li>
+                <li><a class="nav-link" onclick="showContainer('test')">Тест</a></li>
+                <li><a class="nav-link" onclick="showContainer('userInfo')">Личный кабинет</a></li>
+                <li><a class="nav-link" onclick="exit()">Выйти</a></li>
+            </ul>
+        </nav>
+
+        <!-- Блок со вкладками -->
+
+        <div>
+
+            <!-- Главная -->
+            <div class="container active" id="main">
+                <h1>О вселенной звездных войн</h1>
+                <h3>Во вселенной "Звёздных Войн" разворачивается эпическая сага о борьбе между добром и злом, где светлые и тёмные силы сражаются за контроль над галактикой. Основные персонажи, такие как Люк Скайуокер, принцесса Лея, Дарт Вейдер и Йода, становятся символами различных идеалов и конфликтов. 
+
+                    Сюжеты охватывают множество тем, включая дружбу, предательство, искупление и поиски силы. Галактика населена разнообразными расами и существами, от джедаев и ситхов до дроидов и инопланетян, что придаёт ей уникальную атмосферу. 
+                    
+                    Ключевыми элементами являются световые мечи, космические сражения и использование Силы — мистической энергии, которая связывает всех живых существ. "Звёздные Войны" не только развлекают, но и поднимают важные вопросы о морали, власти и судьбе, что делает их актуальными для зрителей всех возрастов.</р>
+            </div>
+
+            <!-- Словарь -->
+            <div class="container" id="dictionary">
+                <h1>Словарь</h1>
+                <input type="text" id="searchInput" placeholder="Поиск в словаре..." oninput="filterTerms()">
+                <div class="term-list" id="termList"></div>
+                <h3>Описание:</h3>
+                <p id="termDescription"></p>
+            </div>
+
+            <!-- Галерея -->
+            <div class="container" id="gallery">
+                <h1>Галерея</h1>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide" style="background-image: url('./img/1.jpg');"></div>
+                        <div class="slide" style="background-image: url('./img/2.jpg');"></div>
+                        <div class="slide" style="background-image: url('./img/3.jpg');"></div>
+                        <div class="slide" style="background-image: url('./img/4.jpg');"></div>
+                        <div class="slide" style="background-image: url('./img/5.jpg');"></div>
+                    </div> 
+                    <div class="slider-controls">
+                        <button class="prev"><</button>
+                        <button class="next">></button>
+                    </div>
+                    <div class="slide-number">
+                        <span id="current">1</span> слайд из <span id="total">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Тест -->
+            <div class="container" id="test">
+                <section id="quiz" class="content-section">
+                    <h2>Тест</h2>
+                    <div id="quiz-container">
+                        <div class="quiz-question">
+                            <p>Вопрос 1: Робот, выполняющий различные функции, от боевых до обслуживающих, часто обладающий уникальной личностью - это</p>
+                            <input type="text" class="quiz-input" data-answer="Дроид" placeholder="Введите ответ...">
+                        </div>
+                        <div class="quiz-question">
+                            <p>Вопрос 2: Законодательный орган Галактической Республики, представляющий интересы различных планет и систем - это</p>
+                            <input type="text" class="quiz-input" data-answer="Сенат" placeholder="Введите ответ...">
+                        </div>
+                        <div class="quiz-question">
+                            <p>Вопрос 3: Кто был один из самых известных джедаев в истории?</p>
+                            <input type="text" class="quiz-input" data-answer="Люк Скайуокер" placeholder="Введите ответ...">
+                        </div>
+                        <div class="quiz-question">
+                            <p>Вопрос 4: Как называется планета, на которой поднимается Люк Скайуокер?</p>
+                            <input type="text" class="quiz-input" data-answer="Татуин" placeholder="Введите ответ...">
+                        </div>
+                        <div class="quiz-question">
+                            <p>Вопрос 5: Что такое Республика в контексте "Звёздных Войн"?</p>
+                            <input type="text" class="quiz-input" data-answer="Политическая структура" placeholder="Введите ответ...">
+                        </div>
+                        
+                        <div class="quiz-question">
+                            <p>Вопрос 6: Как называется группа, пытающаяся свергнуть империю?</p>
+                            <input type="text" class="quiz-input" data-answer="Альянс повстанцев" placeholder="Введите ответ...">
+                        </div>
+                    </div>
+                    <button class="quiz-retry-btn" onclick="retry()">Пройти тест снова</button>
+                    
+                    <p id="quiz-result"></p>
+                </section>
+            </div>
+
+            <!-- Личный кабинет -->
+            <div class="container" id="userInfo">
+                <h1>Личный кабинет</h1>
+                <p>Логин: <span id="pr-login">Неизвестно</span></p>
+                <p>Дата рождения: <span id="pr-birthday">Неизвестно</span></p>
+                <p>Пол: <span id="pr-gender">Неизвестно</span></p>
+                <p>Результат теста: <span id="pr-test"></span></p>
+                <button id="exit" onclick="exit()">Выйти</button>
+            </div>
+
+            <!-- Регистрация -->
+            <div class="registration" id="login">
+                <h1>Регистрация</h1>
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" placeholder="Введите имя..." required oninput="validateInput(this)">
+                </div>
+                <div class="form-group">
+                    <label for="date">Дата рождения:</label>
+                    <input type="date" id="date" min="1950-01-01" max="2024-12-28" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Пол:</label>
+                    <select id="gender" required>
+                        <option value="">Выберите пол</option>
+                        <option value="male">Мужской</option>
+                        <option value="female">Женский</option>
+                    </select>
+                </div>
+                <button id="login" onclick="register()">Войти</button><br><br>
+                <div class="error" id="reg-error"></div>
+            </div>
+        </div>
+
+        <!-- Подвал -->
+        <secrion class="footer_wrap">
+            <footer class="footer wrap">
+                <h2>Контакты:</h2>
+                <p>Телефон: +7(905)250-16-96</p>
+                <a href="#">Вконтакте</a>, <a href="#">Почта</a>
+                <h4>&copy; 2024 Вселенной Звездных Войн</h4>
+            </footer>
+        </secrion>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
